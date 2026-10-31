@@ -1,0 +1,2 @@
+-- This migration has been deprecated and is now empty.
+-- It has been replaced by 20240902_convert_tables_to_innodb.sql and 20240902_add_foreign_keys_final.sql

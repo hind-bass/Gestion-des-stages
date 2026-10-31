@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8fafc;
+}
+
+.card-3d {
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.card-3d:hover {
+    transform: rotateY(10deg) rotateX(5deg) translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #3b82f6;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.login-container {
+    perspective: 1000px;
+}
+
+.login-card {
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.login-card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* Personnalisation de la barre de navigation stagiaire */
+nav.stagiaire-bar {
+    margin-bottom: 2.5rem; /* 40px */
+}
+
+.sidebar.collapsed {
+    width: 70px !important;
+    min-width: 70px !important;
+    max-width: 70px !important;
+    transition: width 0.3s;
+}
+.sidebar.collapsed .nav-text {
+    display: none !important;
+}
+.main-content.expanded {
+    margin-left: 70px !important;
+    transition: margin-left 0.3s;
+} 
+.sidebar,
+.sidebar.collapsed {
+    background-color: #1e40af !important; /* bleu Tailwind bg-blue-800 */
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+}
+
+.main-content.ml-collapsed {
+    margin-left: 70px !important;
+    transition: margin-left 0.3s;
+}

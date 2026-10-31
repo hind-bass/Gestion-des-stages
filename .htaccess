@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Rediriger toutes les requêtes vers le dossier public
+RewriteCond %{REQUEST_URI} !^/Projet4/public/
+RewriteRule ^(.*)$ /Projet4/public/$1 [L]
+
+# Rediriger la racine vers public/index.php
+RewriteCond %{REQUEST_URI} ^/Projet4/$
+RewriteRule ^(.*)$ /Projet4/public/ [R=301,L]
